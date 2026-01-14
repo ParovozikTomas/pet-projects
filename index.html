@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D City Builder Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+        }
+        
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        #ui {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 100;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        #grid-size-controls {
+            margin-top: 10px;
+        }
+        
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        
+        .building-tool {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .building-tool.active {
+            background-color: #45a049;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+        }
+        
+        #info-panel {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 100;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="ui">
+            <h2>3D City Builder</h2>
+            <div>
+                <button id="reset-btn">Reset Grid</button>
+                <button id="toggle-grid-btn">Toggle Grid</button>
+            </div>
+            
+            <div id="grid-size-controls">
+                <label for="grid-width">Grid Width:</label>
+                <input type="number" id="grid-width" min="5" max="50" value="20">
+                
+                <label for="grid-depth">Grid Depth:</label>
+                <input type="number" id="grid-depth" min="5" max="50" value="20">
+                
+                <button id="update-grid-btn">Update Grid</button>
+            </div>
+            
+            <div>
+                <h3>Building Tools:</h3>
+                <div class="building-tool active" data-type="residential">Residential</div>
+                <div class="building-tool" data-type="commercial">Commercial</div>
+                <div class="building-tool" data-type="industrial">Industrial</div>
+                <div class="building-tool" data-type="road">Road</div>
+                <div class="building-tool" data-type="park">Park</div>
+            </div>
+        </div>
+        
+        <div id="info-panel">
+            <h3>Controls:</h3>
+            <p>• Left Click: Place building</p>
+            <p>• Right Click: Remove building</p>
+            <p>• Mouse Wheel: Zoom in/out</p>
+            <p>• Hold Left Mouse Button + Move: Rotate camera</p>
+            <p>• Hold Right Mouse Button + Move: Pan camera</p>
+        </div>
+    </div>
+
+    <!-- Import Three.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
