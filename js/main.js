@@ -32,7 +32,6 @@ class CityBuilderGame {
         // Create scene
         this.scene = new THREE.Scene();
         this.scene.background = new THREE.Color(0x87CEEB); // Sky blue
-        this.scene.add(new THREE.GridHelper(100, 100)); // Ground grid
         
         // Create isometric camera
         this.camera = new THREE.PerspectiveCamera(
@@ -78,7 +77,8 @@ class CityBuilderGame {
         ground.receiveShadow = true;
         this.scene.add(ground);
         
-        // Create grid helpers
+        // Create grid helpers (disabled by default)
+        this.showGrid = false; // Start with grid hidden
         this.createGrid();
         
         // Setup orbit controls for camera movement
@@ -194,33 +194,156 @@ class CityBuilderGame {
         }
     }
 
+    // Function to create low-quality sprite textures programmatically
+    createBuildingTexture(type) {
+        // Create canvas element
+        const canvas = document.createElement('canvas');
+        canvas.width = 64; // Low resolution for "low quality" effect
+        canvas.height = 64;
+        const ctx = canvas.getContext('2d');
+        
+        // Fill background based on building type
+        switch(type) {
+            case 'residential':
+                ctx.fillStyle = '#FFB6C1'; // Light pink background
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw simple house features
+                ctx.fillStyle = '#8B4513'; // Brown roof
+                ctx.beginPath();
+                ctx.moveTo(0, canvas.height/3);
+                ctx.lineTo(canvas.width/2, 0);
+                ctx.lineTo(canvas.width, canvas.height/3);
+                ctx.closePath();
+                ctx.fill();
+                
+                ctx.fillStyle = '#A52A2A'; // Darker brown door
+                ctx.fillRect(canvas.width/2 - 8, canvas.height/2, 16, canvas.height/2);
+                break;
+                
+            case 'commercial':
+                ctx.fillStyle = '#E0FFFF'; // Light cyan background
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw simple windows pattern
+                ctx.fillStyle = '#696969';
+                for(let i = 0; i < 4; i++) {
+                    for(let j = 0; j < 3; j++) {
+                        ctx.fillRect(i * 15 + 5, j * 15 + 10, 8, 10);
+                    }
+                }
+                break;
+                
+            case 'industrial':
+                ctx.fillStyle = '#C0C0C0'; // Silver background
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw factory-like elements
+                ctx.fillStyle = '#A9A9A9';
+                ctx.fillRect(5, 5, canvas.width - 10, 10); // Chimney base
+                ctx.fillRect(10, 0, 5, 5); // Chimney top
+                ctx.fillRect(canvas.width - 15, 5, 10, 15); // Second chimney
+                
+                // Draw pipes
+                ctx.fillStyle = '#2F4F4F';
+                ctx.fillRect(20, canvas.height - 20, canvas.width - 40, 5);
+                break;
+                
+            case 'road':
+                ctx.fillStyle = '#696969'; // Dark gray background
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw road markings
+                ctx.fillStyle = '#FFFFFF';
+                ctx.fillRect(canvas.width/2 - 2, canvas.height/2 - 15, 4, 10); // Dashed line segment
+                ctx.fillRect(canvas.width/2 - 2, canvas.height/2 + 5, 4, 10);
+                break;
+                
+            case 'park':
+                ctx.fillStyle = '#98FB98'; // Light green background
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw simple tree
+                ctx.fillStyle = '#228B22'; // Forest green leaves
+                ctx.beginPath();
+                ctx.arc(canvas.width/2, canvas.height/3, canvas.width/4, 0, Math.PI * 2);
+                ctx.fill();
+                
+                ctx.fillStyle = '#8B4513'; // Tree trunk
+                ctx.fillRect(canvas.width/2 - 3, canvas.height/3, 6, canvas.height/3);
+                break;
+                
+            default:
+                ctx.fillStyle = '#D3D3D3'; // Light gray background
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                break;
+        }
+        
+        // Create texture from canvas
+        const texture = new THREE.CanvasTexture(canvas);
+        texture.magFilter = THREE.NearestFilter; // Low quality filter
+        texture.minFilter = THREE.NearestFilter;
+        
+        return texture;
+    }
+
     placeBuilding(x, y, z) {
         let geometry, material;
         
         switch(this.selectedBuildingType) {
             case 'residential':
                 geometry = new THREE.BoxGeometry(0.8, 1, 0.8);
-                material = new THREE.MeshStandardMaterial({ color: 0xFF6B6B }); // Red
+                const resTexture = this.createBuildingTexture('residential');
+                material = new THREE.MeshStandardMaterial({ 
+                    map: resTexture,
+                    roughness: 0.7,
+                    metalness: 0.3
+                });
                 break;
             case 'commercial':
                 geometry = new THREE.BoxGeometry(0.8, 1.5, 0.8);
-                material = new THREE.MeshStandardMaterial({ color: 0x4ECDC4 }); // Teal
+                const commTexture = this.createBuildingTexture('commercial');
+                material = new THREE.MeshStandardMaterial({ 
+                    map: commTexture,
+                    roughness: 0.7,
+                    metalness: 0.3
+                });
                 break;
             case 'industrial':
                 geometry = new THREE.BoxGeometry(0.8, 0.8, 0.8);
-                material = new THREE.MeshStandardMaterial({ color: 0x45B7D1 }); // Blue
+                const indTexture = this.createBuildingTexture('industrial');
+                material = new THREE.MeshStandardMaterial({ 
+                    map: indTexture,
+                    roughness: 0.8,
+                    metalness: 0.2
+                });
                 break;
             case 'road':
                 geometry = new THREE.BoxGeometry(0.9, 0.1, 0.9);
-                material = new THREE.MeshStandardMaterial({ color: 0x555555 }); // Gray
+                const roadTexture = this.createBuildingTexture('road');
+                material = new THREE.MeshStandardMaterial({ 
+                    map: roadTexture,
+                    roughness: 0.9,
+                    metalness: 0.1
+                });
                 break;
             case 'park':
                 geometry = new THREE.BoxGeometry(0.8, 0.2, 0.8);
-                material = new THREE.MeshStandardMaterial({ color: 0x98FB98 }); // Light green
+                const parkTexture = this.createBuildingTexture('park');
+                material = new THREE.MeshStandardMaterial({ 
+                    map: parkTexture,
+                    roughness: 0.8,
+                    metalness: 0.1
+                });
                 break;
             default:
                 geometry = new THREE.BoxGeometry(0.8, 1, 0.8);
-                material = new THREE.MeshStandardMaterial({ color: 0x999999 }); // Gray
+                const defTexture = this.createBuildingTexture('default');
+                material = new THREE.MeshStandardMaterial({ 
+                    map: defTexture,
+                    roughness: 0.7,
+                    metalness: 0.3
+                });
         }
         
         const building = new THREE.Mesh(geometry, material);

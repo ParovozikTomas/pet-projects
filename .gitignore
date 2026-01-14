@@ -2,37 +2,387 @@
 # Dependencies
 node_modules/
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
-.ENV
-.ENV.local
-.env
-.env.local
-.env.*
+# Build artifacts
+dist/
+build/
+target/
 
 # Logs
 *.log
 
-# Editor
+# Environment variables
+.env
+.env.local
+.env.*
+
+# IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
-*.tmp
 
-# OS
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage reports
+coverage/
+htmlcov/
+*.coverage
+
+# System files
 .DS_Store
 Thumbs.db
 
-# Build outputs
-dist/
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+
+# MyPy cache
+.mypy_cache/
+
+# PyTest cache
+.pytest_cache/
+
+# Gradle
+.gradle/
+
+# Bazel
+bazel-*/
+
+# Julia
+julia-*/
+
+# Zig
+zig*/
+
+# Vagrant
+.vagrant/
+
+# Virtual environments
+venv/
+.venv/
+
+# Maven
+.mvn/
+
+# SBT
+.sbt/
+
+# Leiningen
+.lein/
+
+# Cargo
+.cargo/
+
+# Go
+vendor/
+*.mod
+*.sum
+
+# Ruby
+vendor/bundle/
+*.gem
+
+# PHP
+vendor/
+
+# C#
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# C/C++
+*.o
+*.a
+*.so
+*.dll
+*.exe
+*.out
+*.dylib
+*.ncb
+*.sdf
+*.pidb
+*.vcproj
+*.vcxproj.filters
+
+# Objective-C
+*.dSYM/
+xcuserdata/
+
+# Swift
+*.swiftdoc
+*.swiftmodule
+
+# Android
+*.keystore
+*.jks
+
+# iOS
+*.mobileprovision
+
+# Qt
+*.pro.user
+*.pro.user.*
+*.qm
+
+# CodeLite
+.cproject
+.project
+*.userprefs
+
+# Sublime Text
+*.sublime-workspace
+
+# NetBeans
+nbproject/private/
 build/
-target/
-```
+nbbuild/
+dist/
+nbdist/
+.netbeans/
+*.private/
+
+# Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# Visual Studio
+*.VC.db
+*.VC.VC.opendb
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.filters
+[ip].*.user
+*.suo
+*.pch
+*.ipch
+*.iobj
+*.ilk
+*.meta
+*.pidb
+*.stackdump
+*.VC.VC.opendb
+*.VC.db-shm
+*.VC.db-wal
+*.VC.db-journal
+*.VC.db-stat
+*.VC.db-lock
+*.VC.db-shm.lock
+*.VC.db-wal.lock
+*.VC.db-journal.lock
+*.VC.db-stat.lock
+*.VC.db-lock.lock
+*.VC.db-shm.lock.lock
+*.VC.db-wal.lock.lock
+*.VC.db-journal.lock.lock
+*.VC.db-stat.lock.lock
+*.VC.db-lock.lock.lock
+*.VC.db-shm.lock.lock.lock
+*.VC.db-wal.lock.lock.lock
+*.VC.db-journal.lock.lock.lock
+*.VC.db-stat.lock.lock.lock
+*.VC.db-lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock......lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock......lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-journal.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-stat.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-shm.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock
+*.VC.db-wal.lock.lock.lock.lock.lock......
